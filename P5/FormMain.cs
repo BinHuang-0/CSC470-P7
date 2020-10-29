@@ -5,6 +5,7 @@ namespace P5
     public partial class FormMain : Form
     {
         private AppUser _CurrentAppUser = new AppUser();
+        private int _CurrentProjectId;
         public FormMain()
         {
             InitializeComponent();
@@ -67,6 +68,7 @@ namespace P5
                                                    selectedProjectId.ToString());
                 this.Text = "Main - " + form._SelectedProjectName;
                 selectedProject = form._SelectedProjectName;
+                _CurrentProjectId = selectedProjectId;
             }
             form.Dispose();
             return selectedProject;
@@ -84,6 +86,32 @@ namespace P5
             FormRemoveProject form = new FormRemoveProject(_CurrentAppUser);
             form.ShowDialog();
             form.Dispose();
+        }
+
+        private void issuesDashboardToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            FormIssueDashboard form = new FormIssueDashboard(_CurrentProjectId);
+            form.ShowDialog();
+            form.Dispose();
+        }
+
+        private void issuesRecordToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            FormRecordIssue form = new FormRecordIssue(_CurrentProjectId);
+            form.ShowDialog();
+            form.Dispose();
+        }
+
+        private void issuesModifyToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            FormModifyIssue form = new FormModifyIssue(_CurrentProjectId);
+            form.ShowDialog();
+            form.Dispose();
+        }
+
+        private void issuesRemoveToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+
         }
     }
 }
