@@ -31,6 +31,7 @@ namespace P5
         private void modifyBtn_Click(object sender, EventArgs e)
         {
             Issue newIssue = new Issue();
+            string error;
             newIssue.Id = currentIssue.Id;
             newIssue.ProjectId = currentIssue.ProjectId;
             newIssue.Title = titleTextBox.Text;
@@ -40,8 +41,13 @@ namespace P5
             newIssue.Component = componentTextBox.Text;
             newIssue.IssueStatusId = statusDropDown.SelectedIndex;
  
-            repository.Modify(newIssue);
-            Close();
+            error = repository.Modify(newIssue);
+            if(error == FakeIssueRepository.NO_ERROR) {
+                Close();
+            }
+            else {
+                MessageBox.Show(error, "Attention", MessageBoxButtons.OK);
+            }
         }
 
         private void FormModifyIssue_Load(object sender, EventArgs e)
@@ -60,6 +66,7 @@ namespace P5
                 {
                     discovererDropDown.Items.Add(x.LastName + ", " + x.FirstName);
                 }
+                discovererDropDown.SelectedIndex = 0;
                 idTextBox.Text = currentIssue.Id.ToString();
                 titleTextBox.Text = currentIssue.Title;
                 dateTimePicker.Value = currentIssue.DiscoveryDate;

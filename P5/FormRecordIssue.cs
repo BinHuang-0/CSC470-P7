@@ -24,6 +24,8 @@ namespace P5
             foreach(AppUser x in fakeAppUserRepository.GetAll()) {
                 discovererDropDown.Items.Add(x.LastName + ", " + x.FirstName);
             }
+            discovererDropDown.SelectedIndex = 0;
+            statusDropDown.SelectedIndex = 0;
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
@@ -34,6 +36,7 @@ namespace P5
         private void createBtn_Click(object sender, EventArgs e)
         {
             Issue newIssue = new Issue();
+            string error;
             newIssue.Id = FakeIssueRepository.currentId++;
             newIssue.ProjectId = this.ProjectId;
             newIssue.Title = titleTextBox.Text;
@@ -42,8 +45,14 @@ namespace P5
             newIssue.InitialDescription = descriptionTextBox.Text;
             newIssue.Component = componentTextBox.Text;
             newIssue.IssueStatusId = statusDropDown.SelectedIndex;
-            fakeIssueRepository.Add(newIssue);
-            Close();
+            error = fakeIssueRepository.Add(newIssue);
+            if (error == FakeIssueRepository.NO_ERROR)
+            {
+                Close();
+            }
+            else {
+                MessageBox.Show(error, "Attention", MessageBoxButtons.OK);
+            }
         }
     }
 }

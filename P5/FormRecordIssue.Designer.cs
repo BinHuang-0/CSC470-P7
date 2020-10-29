@@ -136,6 +136,7 @@
             this.descriptionTextBox.Location = new System.Drawing.Point(153, 259);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.descriptionTextBox.Size = new System.Drawing.Size(400, 313);
             this.descriptionTextBox.TabIndex = 7;
             // 
@@ -213,7 +214,7 @@
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.idLabel);
             this.Name = "FormRecordIssue";
-            this.Text = "Record Issue";
+            this.Text = "G";
             this.ResumeLayout(false);
             this.PerformLayout();
 

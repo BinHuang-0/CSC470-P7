@@ -51,6 +51,7 @@
             this.issuesMonthListBox.ItemHeight = 20;
             this.issuesMonthListBox.Location = new System.Drawing.Point(30, 99);
             this.issuesMonthListBox.Name = "issuesMonthListBox";
+            this.issuesMonthListBox.ScrollAlwaysVisible = true;
             this.issuesMonthListBox.Size = new System.Drawing.Size(287, 124);
             this.issuesMonthListBox.TabIndex = 1;
             // 
@@ -78,6 +79,7 @@
             this.issuesDiscovererListBox.ItemHeight = 20;
             this.issuesDiscovererListBox.Location = new System.Drawing.Point(30, 294);
             this.issuesDiscovererListBox.Name = "issuesDiscovererListBox";
+            this.issuesDiscovererListBox.ScrollAlwaysVisible = true;
             this.issuesDiscovererListBox.Size = new System.Drawing.Size(287, 124);
             this.issuesDiscovererListBox.TabIndex = 4;
             // 

@@ -111,7 +111,25 @@ namespace P5
 
         private void issuesRemoveToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-
+            Issue issue;
+            FormSelectIssue form = new FormSelectIssue(_CurrentProjectId);
+            FakeIssueRepository repo = new FakeIssueRepository();
+            DialogResult result;
+            form.ShowDialog();
+            if (form.DialogResult == DialogResult.OK)
+            {
+                issue = repo.GetIssueById(form.selectedId);
+                result = MessageBox.Show("Are you sure you want to remove: " + issue.Title + "?", "Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    repo.Remove(issue);
+                }
+                else
+                {
+                    MessageBox.Show("Remove canceled.", "Attention", MessageBoxButtons.OK);
+                }
+            }
+            form.Dispose();
         }
     }
 }

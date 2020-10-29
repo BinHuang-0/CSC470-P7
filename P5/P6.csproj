@@ -83,6 +83,12 @@
     <Compile Include="FormRecordIssue.Designer.cs">
       <DependentUpon>FormRecordIssue.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRemoveIssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRemoveIssue.Designer.cs">
+      <DependentUpon>FormRemoveIssue.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSelectIssue.cs">
       <SubType>Form</SubType>
     </Compile>

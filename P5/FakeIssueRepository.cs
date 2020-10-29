@@ -22,6 +22,14 @@ namespace P5
         }
 
         public string Add(Issue issue) {
+            string error;
+            error = ValidateIssue(issue);
+            if (error != NO_ERROR) {
+                return error;
+            }
+            if(isDuplicate(issue.Title)) {
+                return "Duplicate Title";
+            }
             Issues.Add(issue);
             return NO_ERROR;
         }
@@ -33,10 +41,25 @@ namespace P5
             return true;
         }
         public string Modify(Issue issue) {
-            int index;
-            index = Issues.FindIndex(x => x.Id == issue.Id);
-            Issues[index] = issue;
-            return NO_ERROR;
+//            int index;
+            string error;
+            Issue save = GetIssueById(issue.Id);
+            error = ValidateIssue(issue);
+            if (error != NO_ERROR) {
+                return error;
+            }
+            Remove(issue);
+            if(isDuplicate(issue.Title)) {
+                Add(save);
+                error = "Duplicate Title";
+            }
+            else {
+                Add(issue);
+            }
+            Issues.Sort((x,y)=> x.Id.CompareTo(y.Id));
+//               index = Issues.FindIndex(x => x.Id == issue.Id);
+//               Issues[index] = issue;
+            return error;
         }
         public int GetTotalNumberOfIssues(int ProjectId) {
             return Issues.Where(x=>x.ProjectId == ProjectId).Count();
