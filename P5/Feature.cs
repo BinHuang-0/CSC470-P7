@@ -6,15 +6,10 @@ using System.Threading.Tasks;
 
 namespace P7
 {
-    public class Issue
+    public class Feature
     {
         public int Id;
         public int ProjectId;
         public string Title;
-        public DateTime DiscoveryDate;
-        public string Discoverer;
-        public string InitialDescription;
-        public string Component;
-        public int IssueStatusId;
     }
 }

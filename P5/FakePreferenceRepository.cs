@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace P5
+namespace P7
 {
     public class FakePreferenceRepository : IPreferenceRepository
     {

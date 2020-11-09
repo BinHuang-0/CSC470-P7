@@ -1,4 +1,4 @@
-﻿using P5;
+﻿using P7;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace P5
+namespace P7
 {
     public partial class FormModifyIssue : Form
     {

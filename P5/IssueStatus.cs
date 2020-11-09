@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P5
+namespace P7
 {
     public class IssueStatus
     {

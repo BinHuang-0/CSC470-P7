@@ -1,4 +1,4 @@
-﻿namespace Builder
+﻿namespace P7
 {
     partial class FormRemoveIssue
     {

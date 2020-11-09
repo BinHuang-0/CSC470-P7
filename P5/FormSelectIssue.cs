@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace P5
+namespace P7
 {
     public partial class FormSelectIssue : Form
     {
