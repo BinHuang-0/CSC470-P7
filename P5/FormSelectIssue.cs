@@ -18,7 +18,6 @@ namespace P7
         {
             InitializeComponent();
             CenterToScreen();
-            selectedId = projectId;
             DialogResult = DialogResult.Cancel;
             foreach(Issue x in fakeIssueRepository.GetAll(selectedId)) {
                 string status = "";

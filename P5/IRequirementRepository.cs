@@ -8,11 +8,12 @@ namespace P7
 {
     public interface IRequirementRepository
     {
-        string Add(Feature feature);
-        List<Feature> GetAll(int ProjectId);
-        string Remove(Feature feature);
-        string Modify(Feature feature);
-        Feature GetFeatureById(int featureId);
-        Feature GetFeatureByTitle(string title);
+        string Add(Requirement requirement);
+        List<Requirement> GetAll(int ProjectId);
+        string Remove(Requirement requirement);
+        string Modify(Requirement requirement);
+        Requirement GetRequirementById(int requirementId);
+        int CountByFeatureId(int featureId);
+        void RemoveByFeatureId(int featureId);
     }
 }

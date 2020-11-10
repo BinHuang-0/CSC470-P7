@@ -131,5 +131,47 @@ namespace P7
             }
             form.Dispose();
         }
+
+        private void createToolStripMenuItem1_Click(object sender, System.EventArgs e)
+        {
+            FormCreateFeature form = new FormCreateFeature(_CurrentProjectId);
+            form.ShowDialog();
+            form.Dispose();
+        }
+
+        private void modifyToolStripMenuItem1_Click(object sender, System.EventArgs e)
+        {
+            FormModfyFeature form = new FormModfyFeature(_CurrentProjectId);
+            form.ShowDialog();
+            form.Dispose();
+        }
+
+        private void removeToolStripMenuItem1_Click(object sender, System.EventArgs e)
+        {
+            FormRemoveFeature form = new FormRemoveFeature(_CurrentProjectId);
+            form.ShowDialog();
+            form.Dispose();
+        }
+
+        private void createToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            FormCreateRequirement form = new FormCreateRequirement(_CurrentProjectId);
+            form.ShowDialog();
+            form.Dispose();
+        }
+
+        private void modifyToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            FormModifyRequirement form = new FormModifyRequirement(_CurrentProjectId);
+            form.ShowDialog();
+            form.Dispose();
+        }
+
+        private void removeToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            FormRemoveRequirement form = new FormRemoveRequirement(_CurrentProjectId);
+            form.ShowDialog();
+            form.Dispose();
+        }
     }
 }
